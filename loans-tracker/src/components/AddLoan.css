@@ -1,0 +1,65 @@
+.form-container {
+    max-width: 400px; /* Set a max width for the form */
+    margin: 50px auto; /* Center the form horizontally and add top margin */
+    padding: 20px; /* Add padding */
+    border-radius: 10px; /* Rounded corners for the form container */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background-color: #f9f9f9; /* Light background color */
+}
+
+.form-title {
+    text-align: center; /* Center the title */
+    margin-bottom: 20px; /* Space below the title */
+}
+
+.input-container {
+    position: relative; /* Position relative for label positioning */
+    margin-bottom: 20px; /* Space between input fields */
+}
+
+.rounded-input {
+    width: 100%; /* Full width */
+    padding: 10px; /* Padding inside the input */
+    border: 1px solid #ccc; /* Border color */
+    border-radius: 25px; /* Rounded corners */
+    font-size: 16px; /* Font size */
+    outline: none; /* Remove outline */
+    transition: border-color 0.2s; /* Transition for border color */
+}
+
+.rounded-input:focus {
+    border-color: #0085ca; /* Change border color on focus */
+}
+
+.input-label {
+    position: absolute; /* Position absolute for label */
+    left: 10px; /* Position from the left */
+    top: 10px; /* Position from the top */
+    transition: 0.2s ease all; /* Smooth transition for label */
+    color: #aaa; /* Label color */
+    pointer-events: none; /* Prevent label from being clicked */
+}
+
+.rounded-input:focus + .input-label,
+.rounded-input:not(:placeholder-shown) + .input-label {
+    top: -10px; /* Move label up */
+    left: 10px; /* Keep label aligned */
+    font-size: 12px; /* Smaller font size */
+    color: #0085ca; /* Change label color on focus */
+}
+
+.submit-button {
+    width: 100%; /* Full width for the button */
+    padding: 10px; /* Padding inside the button */
+    border: none; /* Remove border */
+    border-radius: 25px; /* Rounded corners */
+    background-color: #0085ca; /* Button color */
+    color: white; /* Text color */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.2s; /* Transition for background color */
+}
+
+.submit-button:hover {
+    background-color: #005f8a; /* Darker shade on hover */
+}

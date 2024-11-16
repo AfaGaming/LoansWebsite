@@ -1,8 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Card, Col, Row } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import './HomePage.css'; // Import custom CSS
+import { FaPlus } from 'react-icons/fa'; // Importing the plus icon
 
-const Home = () => {
+const HomePage = () => {
     const [loans, setLoans] = useState([]);
 
     useEffect(() => {
@@ -14,24 +17,37 @@ const Home = () => {
     }, []);
 
     return (
-        <div style={{ padding: '20px' }}>
-            <h1>Loan Tracker</h1>
-            <Link to="/add-loan">
-                <button style={{ marginBottom: '20px' }}>Add New Loan</button>
-            </Link>
-            <div className="loan-list">
+        <div className="home-container">
+            <h1 className="text-center">Loan Items</h1>
+            <Row xs={1} md={2} lg={3} className="g-4">
                 {loans.map((loan) => (
-                    <div key={loan._id} className="loan-card">
-                        <Link to={`/loan/${loan._id}`}>
-                            <h2>{loan.borrowerName}</h2>
-                            <p>Loan Amount: ${loan.loanAmount}</p>
-                            <p>Status: {loan.status}</p>
-                        </Link>
-                    </div>
+                    <Col key={loan._id}>
+                        <Card className="loan-card">
+                            <Card.Body>
+                                <Card.Title>{loan.borrowerName}</Card.Title>
+                                <Card.Text>
+                                    <strong>Loan Amount:</strong> ${loan.loanAmount}<br />
+                                    <strong>Status:</strong> {loan.status}
+                                </Card.Text>
+                                <Link to={`/loans/${loan._id}`} className="btn btn-primary">View Details</Link>
+                            </Card.Body>
+                        </Card>
+                    </Col>
                 ))}
-            </div>
+                {/* Add Loan Card */}
+                <Col>
+                    <Card className="add-loan-card text-center">
+                        <Card.Body>
+                            <Link to="/add-loan" className="add-icon-link">
+                                <FaPlus size={50} className="add-icon" />
+                            </Link>
+                            <Card.Title>Add Loan</Card.Title>
+                        </Card.Body>
+                    </Card>
+                </Col>
+            </Row>
         </div>
     );
 };
 
-export default Home;
+export default HomePage;

@@ -1,0 +1,47 @@
+.home-container {
+    background-color: #f0f8ff; /* Light background */
+    padding: 20px;
+    min-height: 100vh; /* Ensure it covers the full height */
+}
+
+.loan-card {
+    transition: transform 0.2s, box-shadow 0.2s;
+    border: 1px solid transparent; /* Initial border */
+}
+
+.loan-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+    border: 1px solid royalblue; /* Outline on hover */
+}
+
+h1 {
+    color: royalblue; /* Primary color for the heading */
+}
+
+.add-loan-card {
+    background-color: #e7f3ff; /* Light blue background for the add card */
+    border: 1px dashed royalblue; /* Dashed border to differentiate */
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center; /* Center text and icon */
+}
+
+.add-loan-card:hover {
+    transform: scale(1.05); /* Slightly enlarge the card */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Add shadow */
+}
+
+.add-icon-link {
+    display: inline-block; /* Make the link behave like a button */
+    text-decoration: none; /* Remove underline */
+    color: royalblue; /* Color for the plus icon */
+    margin-bottom: 10px; /* Space between icon and title */
+}
+
+.add-icon {
+    transition: transform 0.2s; /* Add transition for hover effect */
+}
+
+.add-icon-link:hover .add-icon {
+    transform: scale(1.2); /* Enlarge the icon on hover */
+}
